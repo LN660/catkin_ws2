@@ -1,0 +1,59 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/skloe/Desktop/wjwwood-serial-1.2.1-32-g683e12d/wjwwood-serial-683e12d/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_28501/fast"
+make[1]: Entering directory '/home/skloe/Desktop/wjwwood-serial-1.2.1-32-g683e12d/wjwwood-serial-683e12d/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_28501.dir/build.make CMakeFiles/cmTC_28501.dir/build
+make[2]: Entering directory '/home/skloe/Desktop/wjwwood-serial-1.2.1-32-g683e12d/wjwwood-serial-683e12d/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_28501.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_28501.dir/CheckSymbolExists.c.o   -c /home/skloe/Desktop/wjwwood-serial-1.2.1-32-g683e12d/wjwwood-serial-683e12d/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_28501
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_28501.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_28501.dir/CheckSymbolExists.c.o  -o cmTC_28501 
+CMakeFiles/cmTC_28501.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_28501.dir/build.make:97: recipe for target 'cmTC_28501' failed
+make[2]: *** [cmTC_28501] Error 1
+make[2]: Leaving directory '/home/skloe/Desktop/wjwwood-serial-1.2.1-32-g683e12d/wjwwood-serial-683e12d/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_28501/fast' failed
+make[1]: *** [cmTC_28501/fast] Error 2
+make[1]: Leaving directory '/home/skloe/Desktop/wjwwood-serial-1.2.1-32-g683e12d/wjwwood-serial-683e12d/build/CMakeFiles/CMakeTmp'
+
+File /home/skloe/Desktop/wjwwood-serial-1.2.1-32-g683e12d/wjwwood-serial-683e12d/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/skloe/Desktop/wjwwood-serial-1.2.1-32-g683e12d/wjwwood-serial-683e12d/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8cb08/fast"
+make[1]: Entering directory '/home/skloe/Desktop/wjwwood-serial-1.2.1-32-g683e12d/wjwwood-serial-683e12d/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_8cb08.dir/build.make CMakeFiles/cmTC_8cb08.dir/build
+make[2]: Entering directory '/home/skloe/Desktop/wjwwood-serial-1.2.1-32-g683e12d/wjwwood-serial-683e12d/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8cb08.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_8cb08.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8cb08
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8cb08.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_8cb08.dir/CheckFunctionExists.c.o  -o cmTC_8cb08 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_8cb08.dir/build.make:97: recipe for target 'cmTC_8cb08' failed
+make[2]: *** [cmTC_8cb08] Error 1
+make[2]: Leaving directory '/home/skloe/Desktop/wjwwood-serial-1.2.1-32-g683e12d/wjwwood-serial-683e12d/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_8cb08/fast' failed
+make[1]: *** [cmTC_8cb08/fast] Error 2
+make[1]: Leaving directory '/home/skloe/Desktop/wjwwood-serial-1.2.1-32-g683e12d/wjwwood-serial-683e12d/build/CMakeFiles/CMakeTmp'
+
+

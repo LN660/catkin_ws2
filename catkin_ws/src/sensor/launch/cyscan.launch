@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<launch>
+
+
+
+<!-- <rosparam param="gps_x"> [1, 3, 5]</rosparam>
+<rosparam param="gps_y"> [2, 4, 6]</rosparam>
+<rosparam param="gps_z"> [30, 30, 0]</rosparam>
+ -->
+
+<rosparam param="cyscan_x"> [0, 0, 4]</rosparam>
+<rosparam param="cyscan_y"> [1, -1, 5]</rosparam>
+<rosparam param="target_x"> [5, 5, 10]</rosparam>
+<rosparam param="target_y">[5, 5, 10]</rosparam>
+
+
+
+
+
+<!--GPS-->
+ <!-- <node name="gps_output1" pkg="sensor" type="gpsout_driver" ns="gps1" output="log" >
+  <param name="port" value="/dev/ttyUSB0"/>
+  <param name="baud" value="57600"/>
+</node>
+<node name="gps_output2" pkg="sensor" type="gpsout_driver" ns="gps2" output="log" >
+  <param name="port" value="/dev/ttyUSB2"/>
+  <param name="baud" value="57600"/>
+</node>  -->
+<!-- <node name="gps_output3" pkg="nmea_navsat_driver" type="nmea_serial_driver" ns="gps3" output="screen" >
+  <param name="port" value="/dev/ttyUSB2"/>
+  <param name="baud" value="57600"/>
+</node> -->
+<!-- <node name="gps_driver1" pkg="sensor" type="gps_driver" ns="gps1" output="log" >
+  <param name="topic_name_sub" value="gps_out_data"/>
+</node>
+<node name="gps_driver2" pkg="sensor" type="gps_driver" ns="gps2" output="log" >
+  <param name="topic_name_sub" value="gps_out_data"/>
+</node> -->
+<!-- <node name="gps_driver3" pkg="dp_core" type="gps_driver" ns="gps3" output="screen" >
+  <param name="topic_name_sub" value="gps3/fix"/>
+</node> -->
+<!-- <node name="gps_fusion" pkg="sensor" type="gps_fusion" output="screen" >
+  <param name="switch_gps1" value="1"/>
+  <param name="switch_gps2" value="1"/>
+  <param name="switch_gps3" value="0"/>
+  <param name="sample_num" value="10"/>
+  <param name="max_sigma" value="1000.0"/>
+  <param name="min_sigma" value="0.0"/>
+</node> -->
+
+<!-- <node name="tf_link_set" pkg="sensor" type="tf_link_set" output="log"/>  -->
+
+
+<!-- CYSCAN -->
+<node name="cyscan_output1" pkg="sensor" type="cyscan_driver" ns="cyscan1" output="screen" >
+  <param name="port" value="/dev/ttyUSB2"/>
+  <param name="baud" value="9600"/>
+</node>
+<node name="cyscan_output2" pkg="sensor" type="cyscan_driver" ns="cyscan2" output="screen" >
+  <param name="port" value="/dev/ttyUSB3"/>
+  <param name="baud" value="9600"/>
+</node>
+
+<node name="cyscan_fusion" pkg="sensor" type="cyscan_fusion" output="screen" >
+  <param name="switch_cyscan1" value="1"/>
+  <param name="switch_cyscan2" value="1"/>
+  <param name="switch_cyscan3" value="0"/>
+  <param name="sample_num" value="20"/>
+<param name="minsigma_kpx" value="0"/>
+<param name="maxsigma_kpx" value="2000"/>
+<param name="minsigma_kpy" value="0"/>
+<param name="maxsigma_kpy" value="2000"/>
+<param name="minsigma_deg" value="0"/>
+<param name="maxsigma_deg" value="1000"/>
+
+
+</node>
+
+
+<!--IMU-->
+<!-- <node name="imu_output1" pkg="dp_core" type="imu_driver" ns="imu1" output="log" >
+  <param name="port" value="/dev/ttyUSB2"/>
+  <param name="baud" value="115200"/>
+</node> -->
+<!-- <node name="imu_output2" pkg="dp_core" type="imu_driver" ns="imu2" output="screen" >
+  <param name="port" value="/dev/ttyUSB4"/>
+  <param name="baud" value="115200"/>
+</node>
+<node name="imu_output3" pkg="dp_core" type="imu_driver" ns="imu3" output="screen" >
+  <param name="port" value="/dev/ttyUSB5"/>
+  <param name="baud" value="115200"/>
+</node> -->
+<!-- <node name="imu_fusion" pkg="dp_core" type="imu_fusion" output="log" >
+  <param name="switch_imu1" value="1"/>
+  <param name="switch_imu2" value="0"/>
+  <param name="switch_imu3" value="0"/>
+  <param name="sample_num" value="10"/>
+  <param name="max_sigma" value="100"/>
+  <param name="min_sigma" value="0"/>
+</node>
+ -->
+
+
+</launch>

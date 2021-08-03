@@ -1,0 +1,8 @@
+# CMake generated Testfile for 
+# Source directory: /home/skloe/Desktop/wjwwood-serial-1.2.1-32-g683e12d/wjwwood-serial-683e12d/tests
+# Build directory: /home/skloe/Desktop/wjwwood-serial-1.2.1-32-g683e12d/wjwwood-serial-683e12d/build/tests
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+add_test(_ctest_serial_gtest_serial-test "/home/skloe/Desktop/wjwwood-serial-1.2.1-32-g683e12d/wjwwood-serial-683e12d/build/catkin_generated/env_cached.sh" "/usr/bin/python2" "/opt/ros/melodic/share/catkin/cmake/test/run_tests.py" "/home/skloe/Desktop/wjwwood-serial-1.2.1-32-g683e12d/wjwwood-serial-683e12d/build/test_results/serial/gtest-serial-test.xml" "--return-code" "/home/skloe/Desktop/wjwwood-serial-1.2.1-32-g683e12d/wjwwood-serial-683e12d/build/devel/lib/serial/serial-test --gtest_output=xml:/home/skloe/Desktop/wjwwood-serial-1.2.1-32-g683e12d/wjwwood-serial-683e12d/build/test_results/serial/gtest-serial-test.xml")
+add_test(_ctest_serial_gtest_serial-test-timer "/home/skloe/Desktop/wjwwood-serial-1.2.1-32-g683e12d/wjwwood-serial-683e12d/build/catkin_generated/env_cached.sh" "/usr/bin/python2" "/opt/ros/melodic/share/catkin/cmake/test/run_tests.py" "/home/skloe/Desktop/wjwwood-serial-1.2.1-32-g683e12d/wjwwood-serial-683e12d/build/test_results/serial/gtest-serial-test-timer.xml" "--return-code" "/home/skloe/Desktop/wjwwood-serial-1.2.1-32-g683e12d/wjwwood-serial-683e12d/build/devel/lib/serial/serial-test-timer --gtest_output=xml:/home/skloe/Desktop/wjwwood-serial-1.2.1-32-g683e12d/wjwwood-serial-683e12d/build/test_results/serial/gtest-serial-test-timer.xml")

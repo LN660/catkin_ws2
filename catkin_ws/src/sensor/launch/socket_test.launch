@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<launch>
+<!-- //cyscan传感器在船上的位置坐标，这里船舶的坐标定义为船头为y正，右弦为x正 -->
+
+
+<node name="sensor_server" pkg="sensor" type="sensor_server" output="screen" >
+</node>
+
+<node name="sensor_client" pkg="sensor" type="sensor_client" output="screen" >
+</node>
+
+<node name="gui_server" pkg="sensor" type="gui_server" output="screen" >
+</node>
+<!-- 传感器发送数据的节点 -->
+<!-- <node name="sensor_server" pkg="sensor" type="sensor_server" output="log">
+<param name="port" value="12000"/>
+</node>
+
+<node name="sensor_client" pkg="sensor" type="sensor_client" output="log">
+<param name="port" value="13000"/>
+</node>
+<node name="gui_server" pkg="sensor" type="gui_server" output="log">
+<param name="port" value="10086"/>
+</node>
+ -->
+</launch>

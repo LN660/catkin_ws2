@@ -1,0 +1,11 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~switch_gps1_bool" : \b [bool] switch of GPS 1 min: False, default: True, max: True
+- \b "~switch_gps2_bool" : \b [bool] switch of GPS 2 min: False, default: True, max: True
+- \b "~switch_gps3_bool" : \b [bool] switch of GPS 3 min: False, default: False, max: True
+- \b "~max_sigma" : \b [double] superier of variance min: 0.0, default: 10.0, max: 100.0
+- \b "~min_sigma" : \b [double] inferier of variance min: 0.0, default: 0.0, max: 10.0
+- \b "~log_level" : \b [int] Set Log Level min: 0, default: 0, max: 2
+

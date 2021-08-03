@@ -1,0 +1,15 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~switch_imu1_bool" : \b [bool] switch of IMU 1 min: False, default: True, max: True
+- \b "~switch_imu2_bool" : \b [bool] switch of IMU 2 min: False, default: True, max: True
+- \b "~switch_imu3_bool" : \b [bool] switch of IMU 3 min: False, default: False, max: True
+- \b "~maxsigma_head" : \b [double] superier of variance min: 0.0, default: 1000.0, max: 10000.0
+- \b "~minsigma_head" : \b [double] inferier of variance min: 0.0, default: 0.0, max: 10.0
+- \b "~maxsigma_roll" : \b [double] superier of variance min: 0.0, default: 1000.0, max: 10000.0
+- \b "~minsigma_roll" : \b [double] inferier of variance min: 0.0, default: 0.0, max: 10.0
+- \b "~maxsigma_pitch" : \b [double] superier of variance min: 0.0, default: 10000.0, max: 10000.0
+- \b "~minsigma_pitch" : \b [double] inferier of variance min: 0.0, default: 0.0, max: 10.0
+- \b "~log_level" : \b [int] Set Log Level min: 0, default: 0, max: 2
+

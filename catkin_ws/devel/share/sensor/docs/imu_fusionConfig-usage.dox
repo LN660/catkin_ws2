@@ -1,0 +1,16 @@
+\subsubsection usage Usage
+\verbatim
+<node name="imu_fusion" pkg="sensor" type="imu_fusion">
+  <param name="switch_imu1_bool" type="bool" value="True" />
+  <param name="switch_imu2_bool" type="bool" value="True" />
+  <param name="switch_imu3_bool" type="bool" value="False" />
+  <param name="maxsigma_head" type="double" value="1000.0" />
+  <param name="minsigma_head" type="double" value="0.0" />
+  <param name="maxsigma_roll" type="double" value="1000.0" />
+  <param name="minsigma_roll" type="double" value="0.0" />
+  <param name="maxsigma_pitch" type="double" value="10000.0" />
+  <param name="minsigma_pitch" type="double" value="0.0" />
+  <param name="log_level" type="int" value="0" />
+</node>
+\endverbatim
+

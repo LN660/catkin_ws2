@@ -1,0 +1,15 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~switch_radius1_bool" : \b [bool] switch of RADIUS 1 min: False, default: True, max: True
+- \b "~switch_radius2_bool" : \b [bool] switch of RADIUS 2 min: False, default: True, max: True
+- \b "~switch_radius3_bool" : \b [bool] switch of RADIUS 3 min: False, default: False, max: True
+- \b "~maxsigma_deg" : \b [double] superier of variance min: 0.0, default: 1000.0, max: 10000.0
+- \b "~minsigma_deg" : \b [double] inferier of variance min: 0.0, default: 0.0, max: 10.0
+- \b "~maxsigma_kpx" : \b [double] superier of variance min: 0.0, default: 1000.0, max: 10000.0
+- \b "~minsigma_kpx" : \b [double] inferier of variance min: 0.0, default: 0.0, max: 10.0
+- \b "~maxsigma_kpy" : \b [double] superier of variance min: 0.0, default: 1000.0, max: 10000.0
+- \b "~minsigma_kpy" : \b [double] inferier of variance min: 0.0, default: 0.0, max: 10.0
+- \b "~log_level" : \b [int] Set Log Level min: 0, default: 0, max: 2
+

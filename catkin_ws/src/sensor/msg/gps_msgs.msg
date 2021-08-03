@@ -1,0 +1,11 @@
+time stamp
+float64 longitude
+float64 latitude
+float64 altitude
+float64 UTMx
+float64 UTMy
+float64 var_longitude
+float64 var_latitude
+float64 var_altitude
+float64 var_UTMx
+float64 var_UTMy

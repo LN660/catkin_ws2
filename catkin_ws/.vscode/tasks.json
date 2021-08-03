@@ -1,0 +1,21 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "source",
+			"type": "shell",
+			"command": "source /opt/ros/melodic/setup.bash;"
+		},
+		{
+			"label": "catkin_make",
+			"type": "shell",
+			"command": "echo $PATH; source /opt/ros/melodic/setup.bash; echo $PATH;whereis catkin_make; catkin_make",
+			"group": {	"kind": "build","isDefault": true},
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"source"
+			],
+			"problemMatcher": []
+		}
+	]
+}

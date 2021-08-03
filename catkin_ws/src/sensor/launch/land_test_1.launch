@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<launch>
+<!-- //cyscan传感器在船上的位置坐标，这里船舶的坐标定义为船头为y正，右弦为x正 -->
+<rosparam param="cyscan_x"> [0, 0, 4]</rosparam>
+<rosparam param="cyscan_y"> [0.72, -0.93, 5]</rosparam>
+
+<!-- 定义标记的点的位置信息，这里注意通常两台cyscan的标记点是一个 -->
+<rosparam param="target_x">[8.22, 8.22, 10]</rosparam>
+<rosparam param="target_y">[-8.03,-8.03, 10]</rosparam>
+
+
+<!-- 设置导管架平台的参数  平台中心点的经纬度、与正北方向的夹角 -->
+<param name="topside_lat" value="3101.833503"/>
+<param name="topside_lon" value="12126.611458"/>
+<param name="topside_head" value="160"/>
+<!--船上gps坐标的位置 ，目前取为船舶中心 -->
+<rosparam param="gps_x"> [0, 0, 5]</rosparam>
+<rosparam param="gps_y"> [0,-1.2, 6]</rosparam>
+<rosparam param="gps_z"> [0, 0, 0]</rosparam>
+
+
+<!-- 运行传感器节点 -->
+
+
+<!-- CYSCAN -->
+<node name="cyscan_output1" pkg="sensor" type="cyscan_driver" ns="cyscan1" output="log" >
+  <param name="port" value="/dev/ttyUSB2"/>
+  <param name="baud" value="9600"/>
+</node>
+
+<!-- <node name="cyscan_output2" pkg="sensor" type="cyscan_driver" ns="cyscan2" output="log" >
+  <param name="port" value="/dev/ttyUSB1"/>
+  <param name="baud" value="9600"/>
+</node> -->
+
+<node name="cyscan_fusion" pkg="sensor" type="cyscan_fusion" output="log" >
+  <param name="switch_cyscan1" value="1"/>
+  <param name="switch_cyscan2" value="0"/>
+  <param name="switch_cyscan3" value="0"/>
+  <param name="sample_num" value="20"/>
+<param name="minsigma_kpx" value="0"/>
+<param name="maxsigma_kpx" value="2000"/>
+<param name="minsigma_kpy" value="0"/>
+<param name="maxsigma_kpy" value="2000"/>
+<param name="minsigma_deg" value="0"/>
+<param name="maxsigma_deg" value="1000"/>
+</node>
+
+<!-- IMU -->
+
+<node name="imu_freehand" pkg="sensor" type="hfi_b9_ros.py"  output="log">
+</node>
+<node name="imu_rpy" pkg="sensor" type="get_imu_rpy.py"  output="log">
+</node>
+
+<node name="imu_output1" pkg="sensor" type="imu_driver"  output="log" >
+  <!-- <param name="port" value="/dev/ttyUSB1"/>
+  <param name="baud" value="115200"/> -->
+</node>
+
+<node name="imu_fusion" pkg="sensor" type="imu_fusion" output="log" >
+  <param name="switch_imu1" value="1"/>
+  <param name="switch_imu2" value="0"/>
+  <param name="switch_imu3" value="0"/>
+  <param name="sample_num" value="50"/>
+  <param name="maxsigma_roll" value="1000"/>
+  <param name="minsigma_roll" value="0"/>
+  <param name="maxsigma_pitch" value="1000"/>
+  <param name="minsigma_pitch" value="0"/>
+  <param name="maxsigma_head" value="1000"/>
+  <param name="minsigma_head" value="0"/>
+</node>
+
+<!--GPS-->
+ <node name="gps_output1" pkg="sensor" type="gpsout_driver" ns="gps1" output="log" >
+  <param name="port" value="/dev/ttyUSB1"/>
+  <param name="baud" value="57600"/>
+</node>
+<!--<node name="gps_output2" pkg="sensor" type="gpsout_driver" ns="gps2" output="log" >
+  <param name="port" value="/dev/ttyUSB1"/>
+  <param name="baud" value="57600"/>
+</node>
+ <node name="gps_output3" pkg="nmea_navsat_driver" type="nmea_serial_driver" ns="gps3" output="screen" >
+  <param name="port" value="/dev/ttyUSB2"/>
+  <param name="baud" value="57600"/>
+</node> -->
+<node name="gps_driver1" pkg="sensor" type="gps_driver" ns="gps1" output="log" >
+  <param name="topic_name_sub" value="gps_out_data"/>
+</node>
+<!--<node name="gps_driver2" pkg="sensor" type="gps_driver" ns="gps2" output="log" >
+  <param name="topic_name_sub" value="gps_out_data"/>
+</node>
+<node name="gps_driver3" pkg="dp_core" type="gps_driver" ns="gps3" output="screen" >
+  <param name="topic_name_sub" value="gps3/fix"/>
+</node> -->
+<node name="gps_fusion" pkg="sensor" type="gps_fusion" output="log" >
+  <param name="switch_gps1" value="1"/>
+  <param name="switch_gps2" value="0"/>
+  <param name="switch_gps3" value="0"/>
+  <param name="sample_num" value="20"/>
+  <param name="max_sigma" value="1000.0"/>
+  <param name="min_sigma" value="0"/>
+</node>
+<!-- UTM坐标的转换 -->
+<node name="utm_tf_set" pkg="sensor" type="utm_tf" output="screen">
+</node>
+<!-- SOCKET相关 -->
+
+<node name="sensor_server" pkg="sensor" type="sensor_server" output="log" >
+</node>
+
+<node name="sensor_client" pkg="sensor" type="sensor_client" output="log" >
+</node>
+
+<node name="gui_server" pkg="sensor" type="gui_server" output="log" >
+</node>
+<!-- 传感器发送数据的节点 -->
+<!-- <node name="sensor_server" pkg="sensor" type="sensor_server" output="log">
+<param name="port" value="12000"/>
+</node>
+
+<node name="sensor_client" pkg="sensor" type="sensor_client" output="log">
+<param name="port" value="13000"/>
+</node>
+<node name="gui_server" pkg="sensor" type="gui_server" output="log">
+<param name="port" value="10086"/>
+</node>
+ -->
+</launch>
